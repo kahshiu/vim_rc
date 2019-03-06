@@ -4,7 +4,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 ":PlugInstall
@@ -27,6 +27,7 @@ syntax on
 
 set guifont=consolas:h11:cANSI
 set formatoptions-=cqt
+set encoding=utf-8
 
 """""""""""""
 " search setting
@@ -60,8 +61,9 @@ let g:gvimlocal    ='c:\my_vim\gvim_8.1.0991_x86\vim'
 let g:claims       ='c:\localhost_claims_dev'
 let g:claimsnode   ='c:\localhost_claims_dev3'
 
-" ultisnips snippets custom directory
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "c:\my_snippets"]
+" ultisnips snippets custom directory, 
+" make sure its saved in c:\Users\kschong\.vim\plugged\vim-snippets\my_snippets
+let g:UltiSnipsSnippetDirectories=["UltiSnips","my_snippets"]
 
 """""""""""""
 " key mapping
