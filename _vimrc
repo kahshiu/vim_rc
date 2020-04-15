@@ -5,35 +5,38 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
-"Plug 'junegunn/vim-easy-align'
+Plug 'chase/focuspoint-vim'
+Plug 'gregsexton/Atom'
+
+" Plug 'junegunn/vim-easy-align'
 " Plug 'Valloric/YouCompleteMe'
 
 " START: typescript packages for vim
 " syntax highlighting and typescript to javascript compilation
-Plug 'leafgarland/typescript-vim'
-"Plug 'ianks/vim-tsx'
-"Plug 'w0rp/ale'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'w0rp/ale'
 " Typescript server
-"Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 " async process manager
-"Plug 'Shougo/vimproc.vim', {
-"    \ 'build' : {
-"    \     'windows' : 'tools\\update-dll-mingw',
-"    \     'cygwin' : 'make -f make_cygwin.mak',
-"    \     'mac' : 'make -f make_mac.mak',
-"    \     'linux' : 'make',
-"    \     'unix' : 'gmake',
-"    \    },
-"    \ }
-Plug 'Valloric/YouCompleteMe', {
-    \ 'build' : {
-    \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-    \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-    \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-    \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-    \    }
-    \ }
-Plug $VIM . '/plugins/vimproc'
+" Plug 'Shougo/vimproc.vim', {
+"     \ 'build' : {
+"     \     'windows' : 'tools\\update-dll-mingw',
+"     \     'cygwin' : 'make -f make_cygwin.mak',
+"     \     'mac' : 'make -f make_mac.mak',
+"     \     'linux' : 'make',
+"     \     'unix' : 'gmake',
+"     \    },
+"     \ }
+" Plug 'Valloric/YouCompleteMe', {
+"     \ 'build' : {
+"     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+"     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+"     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+"     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+"     \    }
+"     \ }
+"Plug $VIM . '/plugins/vimproc'
 
 call plug#end()
 ":PlugInstall
@@ -43,6 +46,7 @@ call plug#end()
 """""""""""""
 set guioptions-=m
 set guioptions-=T
+set guioptions+=b
 set ruler
 set number
 set textwidth  =0 
@@ -51,7 +55,8 @@ set nowrap
 
 set termguicolors
 set background =dark
-colorscheme solarized8
+" colorscheme solarized8
+colorscheme focuspoint
 syntax on
 
 set guifont=consolas:h11:cANSI
@@ -87,6 +92,7 @@ set foldlevelstart=99
 """""""""""""
 " variables
 """""""""""""
+let $PYTHONHOME = 'C:\Users\kschong\AppData\Local\Programs\Python\Python38'
 let mapleader      ='['
 
 " cd `=pathname`
@@ -106,7 +112,7 @@ let g:ycm_key_list_select_completion=['<C-j>']
 " \   'typescript': ['tsserver', 'tslint'],
 " \   'vue': ['eslint']
 " \}
-"   'rust': ['rls', 'cargo']
+" 'rust': ['rls', 'cargo']
 
 
 "if !exists("g:ycm_semantic_triggers")
@@ -115,15 +121,15 @@ let g:ycm_key_list_select_completion=['<C-j>']
 "  let g:ycm_semantic_triggers['typescript'] = ['.']
 "
 " Ale
-highlight ALEErrorSign ctermfg=9
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\}
+" highlight ALEErrorSign ctermfg=9
+" let g:ale_sign_error = '✖'
+" let g:ale_sign_warning = '⚠'
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['eslint'],
+" \}
 
-let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_text_changed = 'never'
 
 noremap <Leader>lf :ALEFix<CR>
 
@@ -140,6 +146,7 @@ nmap <leader>ve :e! $myvimrc<cr>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>N :NERDTreeClose<CR>
+nnoremap <leader>c :!code -r %<CR>
 
 nnoremap <left>    :tabprev<CR>
 nnoremap <right>   :tabnext<CR>
