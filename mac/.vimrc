@@ -323,4 +323,4 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'"
 
 
 
-cd ~/Documents
+" cd ~/Documents

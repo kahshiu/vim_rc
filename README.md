@@ -12,4 +12,5 @@ MAC
 ```
 ln ~/Documents/vim_rc/mac/.vimrc into ~/.vimrc
 ```
-3. Alternatively, directly replace ~/Documents/vim_rc/mac/.vimrc into ~/.vimrc
+Alternatively, directly replace ~/Documents/vim_rc/mac/.vimrc into ~/.vimrc
+3. symbolic link to ~/Documents/vim_rc/mac/.bash_profile ~/.bash_profile
